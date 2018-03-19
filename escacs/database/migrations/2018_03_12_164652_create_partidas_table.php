@@ -16,10 +16,15 @@ class CreatePartidasTable extends Migration
         Schema::create('partidas', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('finalizada')->default(0);
+
+            $table->integer('jugador1')->unsigned();
             $table->foreign('jugador1')->references('id')
             ->on('users')->onDelete('cascade');
+
+            $table->integer('jugador2')->unsigned();
             $table->foreign('jugador2')->references('id')
             ->on('users')->onDelete('cascade');
+
             $table->integer('turno')->default(1);
             $table->timestamps();
         });
