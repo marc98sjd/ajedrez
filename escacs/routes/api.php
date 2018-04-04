@@ -21,11 +21,6 @@ Route::get('/', 'Controller@checkUser');
 
 Route::get('/login/{email}/{password}', 'Auth\LoginController@tryLogin')->name('login');
 
-Route::get('/register', function()
-{
-    return view('auth/register');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

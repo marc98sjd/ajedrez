@@ -15,7 +15,7 @@ class Controller extends BaseController
     	if (Auth::check()) {
     		echo "Estas logeado";
 		}else{
-			return redirect('/redirect');
+			return redirect('/register');
 		}
     }
 }
