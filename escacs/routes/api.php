@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,6 +20,8 @@ Route::get('/', 'Controller@checkUser');
 
 Route::get('/login/{email}/{password}', 'Auth\LoginController@tryLogin')->name('login');
 
-Auth::routes();
+Route::get('/logout/{token}', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/disponible/{token}', 'PartidaController@disponible')->name('disponible');
+
+Auth::routes();

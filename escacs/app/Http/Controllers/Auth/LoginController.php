@@ -50,13 +50,21 @@ class LoginController extends Controller
             ->where('email', $email)
             ->update(['remember_token' => $token_id]);
 
-            echo "\n\ndatos correctos!\néste es tu token: $token_id\n\n";
+            return "\n\nDatos correctos!\nÉste es tu token: $token_id\n\n";
         }else{
-            echo "\n\ndatos introducidos no estan en bd\n\n";
+            return "\n\nLos datos introducidos no estan en nuestra base de datos.\n\n";
         }
     }
 
-    public function tryRegister(){
-        echo "no hay registro";
+    public function logout($token){
+        $user = DB::table('users')->where('remember_token', $token)->value('remember_token');
+        if ($user != '') {
+            DB::table('users')
+            ->where('remember_token', $token)
+            ->update(['remember_token' => '']);
+            return "Sesión cerrada con éxito.";
+        }else{
+            return "No puedes cerrar sesión sin haberla abierto!";
+        }
     }
 }
