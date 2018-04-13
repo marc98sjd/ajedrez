@@ -1,2 +1,3 @@
 # ajedrez
-mover una ficha de ajedrez
+
+Api para juego de ajedrez.
