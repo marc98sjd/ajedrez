@@ -24,4 +24,6 @@ Route::get('/logout/{token}', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/disponible/{token}', 'PartidaController@disponible')->name('disponible');
 
+Route::get('/jugar/{name}/{token}', 'PartidaController@jugar')->name('jugar');
+
 Auth::routes();
