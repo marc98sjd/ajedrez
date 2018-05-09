@@ -5,6 +5,8 @@ Api para juego de ajedrez.
   - Logout
   - Usuarios disponibles
   - Mis partidas
-  - Jugar
+  - Crear partida
   - Fichas tablero
   - Mover ficha
+  - Matar ficha
+  - Fin de partida
